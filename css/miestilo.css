@@ -1,0 +1,123 @@
+ul {
+    margin     : 0;
+    padding    : 0;
+    list-style : none;
+    }
+
+
+.header-top{
+    background: #4760bb;
+    /*background: #ff2227;*/
+ }
+
+ /*Social Icon*/
+
+.header-top .social-icon li{
+    display: inline-block;
+ }
+
+.header-top .social-icon li a{
+    line-height: 50px;
+    width: 30px;
+    color: #fff;
+}
+
+.header-top .social-icon li a:hover{
+    opacity: .5; 
+}
+
+/* Phone, Emial, Get a Quote */
+.header-top .top-contact li{
+    display    : inline-block;
+    line-height: 50px;
+    text-align :center;
+}
+
+.header-top .top-contact li.phone,
+.header-top .top-contact li.email{
+    padding  : 0 20px;
+    color    : #fff;
+}
+
+.header-top .top-contact li.phone i,
+.header-top .top-contact li.email i{
+    margin-right: 5px;
+    opacity: .5;
+}
+
+
+.header-top .top-contact li.get-a-quote a{
+    padding: 0 30px;
+    display: block;
+    background: #3ea8f4;
+    /*background: #D9534F;*/
+    color: #fff;
+}
+
+.header-top .top-contact li.get-a-quote a:hover{
+    opacity: .8;
+}
+
+/*.nav-item{
+    color: #ff00ff;
+}*/
+
+.navbar {
+    font-size: 18px;
+    color: #DDBB11;
+}
+
+.navbar-nav > li {
+    /*margin-left : 20px;*/
+}
+
+.peterhann {
+    color: #00ff00;
+    font-size: 60px;
+}
+
+/* Media Queries */
+
+@media only screen and (max-width: 1024px){
+    .header-top{
+        text-align:center;
+    }
+
+    .header-top .top-contact li{
+        line-height: 1;
+        padding: 5px 0 10px;
+    }
+
+    .header-top .top-contact li.get-a-quote a{
+        padding: 8px 15px; 
+    }
+
+    .top-contact.pull-right{
+        float: none !important;
+    }
+
+    
+}
+
+.logo {
+    padding: 25px 30px 25px 120px;
+}
+
+
+@media screen and (max-width : 768px) {
+
+/*    .logo {
+        border: 2px solid #00ff00;
+    }
+*/
+
+}
+
+@media (max-width : 767px) { 
+
+    .logo {
+        padding-left: 25px;
+    }
+
+ 
+}
