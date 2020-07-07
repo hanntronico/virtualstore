@@ -1,3 +1,7 @@
+<!--     <script src="https://bootswatch.com/_vendor/jquery/dist/jquery.min.js"></script>
+    <script src="https://bootswatch.com/_vendor/bootstrap/dist/js/bootstrap.min.js"></script> -->
+
+
       <script type="text/javascript" src="js/bootstrap.min.js"></script><!-- Bootstrap Framework -->
       <script type="text/javascript" src="js/plugins.js"></script><!-- jQuery Plugins -->
       <script type="text/javascript" src="addons/superfish_responsive/superfish_menu.js"></script>

@@ -31,18 +31,7 @@ function recalcula () {
 
 </script>
 
-<div id="carrito">
-<!-- <table border="0" cellpadding="0" cellspacing="0" width="100%">
-<tr>
-	<td align="center"><span style="font-size:14px; font-weight:bold; color:#666">REALIZAR PEDIDO</span></td>
-</tr>
-</table> -->
-
-<!-- <table width="100%">
-<tr>
-	<td align="right"><a href="producto.php">Ver Productos</a></td>
-</tr>
-</table> -->
+<div id="carrito" style="padding: 15px;">
 
 <?php 
 	// echo var_dump($_SESSION["s_prod"])."<br>"; 
@@ -172,11 +161,28 @@ else
 </tbody>
 </table>
 <br>
-	<div id="botonera" style="tex">
+<!-- 	<div id="botonera">
 		<input name="accion" type="submit" value="Recalcular" class="btnrecalc">
-		<input name="accion" type="submit" value="Seguir Comprando" class="btnblue">
-		&nbsp;&nbsp;<input name="accion" type="submit" value="Confirma Pedido" class="btnblue">
-		&nbsp;&nbsp;
+		<input name="accion" type="submit" value="Seguir Comprando" class="btn btn-primary btnblue">
+		<input name="accion" type="submit" value="Confirma Pedido" class="btn btn-primary btnblue">
+		
+	</div> -->
+
+	<div class="row">
+		<div class="col-lg-12">
+			<div class="pull-right">
+<!-- 		  	<button name="accion" type="submit" class="btn btn-info btn-sm btnrecalc">Recalcular</button>
+		  	<button name="accion" type="submit" class="btn btn-info btn-sm">Seguir Comprando</button>
+		  	<button name="accion" type="submit" class="btn btn-info btn-sm">Confirmar</button> -->
+
+		<input name="accion" type="submit" value="Recalcular" class="btn btn-info btn-sm btnrecalc">
+		<input name="accion" type="submit" value="Seguir Comprando" class="btn btn-info btn-sm">
+		<input name="accion" type="submit" value="Confirma Pedido" class="btn btn-info btn-sm">
+
+
+			</div>
+		</div>
 	</div>
+
 </form>
 </div>

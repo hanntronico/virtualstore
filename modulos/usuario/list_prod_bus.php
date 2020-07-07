@@ -4,7 +4,7 @@
         $dat=$_GET["dat"];
         $pag=$_GET["pag"];  
 
-        // echo "dato: ".$dat." pagina:".$pag; 
+        // echo "dato: ".$dat." pagina:".$pag;
 
         if ($pag==""){
           $pag=0;
@@ -17,12 +17,13 @@
         $link=Conectarse();
         
         // if($dat==0){
-          $sq="select * from producto where stock <> 0 and estado >= 1 and descripcion like '%".$_GET["dat"]."%'";
-          $res=mysql_query($sq,$link);
-          $numreg=mysql_num_rows($res);
+          $sq="SELECT * FROM producto WHERE stock <> 0 AND estado >= 1 AND descripcion LIKE '%".$_GET["dat"]."%'";
+          $res=mysqli_query($link, $sq);
+          $numreg=mysqli_num_rows($res);
         // }
         
         // echo $sq." ".$numreg;
+        // exit();
 
       ?>  
 
@@ -30,12 +31,12 @@
         <tr>
           <td>
             <?php 
-                  $res=@mysql_query("set names utf8",$link);
-                  $row=@mysql_fetch_array($res);
-                  $sqlq="select * from producto where stock <> 0 and estado >= 1 and descripcion like '%".$_GET["dat"]."%'";
+                  $res=@mysqli_query($link,"set names utf8");
+                  $row=@mysqli_fetch_array($res);
+                  $sqlq="SELECT * FROM producto WHERE stock <> 0 AND estado >= 1 AND descripcion LIKE '%".$_GET["dat"]."%'";
                   // echo $sqlq;  
-                  $res=mysql_query($sqlq, $link);
-                  $rwc=mysql_fetch_array($res);
+                  $res=mysqli_query($link, $sqlq);
+                  $rwc=mysqli_fetch_array($res);
                   // if ($_GET["cod"]==0) {
                   //   $str1="TODAS";  
                   // }else{
@@ -61,21 +62,21 @@
     
     </div>
     <?php 
-      $res=@mysql_query("set names utf8",$link);
-      $row=@mysql_fetch_array($res);
+      $res=@mysqli_query($link, "set names utf8");
+      $row=@mysqli_fetch_array($res);
                   
       // if($dat==''){
-        $sq="select * from producto where stock <> 0 and estado >= 1 and descripcion like '%".$_GET["dat"]."%' order by 2 LIMIT $filini,6";
+        $sq="SELECT * FROM producto WHERE stock <> 0 AND estado >= 1 AND descripcion LIKE '%".$_GET["dat"]."%' order by 2 LIMIT $filini,6";
         // echo $sq;
         // exit();
-        $res=mysql_query($sq,$link);
+        $res=mysqli_query($link, $sq);
         $strimag="";
 
       // }
       
        // echo $sq; exit();          
                   
-      while ($rwc=mysql_fetch_array($res))
+      while ($rwc=mysqli_fetch_array($res))
        	{
 // cod_producto, descripcion, cod_subcat, precio, imagen, stock, cod_marca, prom
       ?> 

@@ -5,24 +5,26 @@
             <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
         <![endif]-->
 
-          <?php include ("paneles.php"); ?>
+          <?php //include ("paneles.php"); ?>
           <?php include ("header.php"); ?>
           <?php include ("nav.php"); ?>
+          <?php include ("subnav.php"); ?>
 
-        <section id="contenedor">
+        <section class="container bg-light" id="contenedor" style="border-radius: 0.75em;">
+        <!-- <section id="contenedor" style="border: 1px solid #ff0000;" > -->
           <section id="land"></section>
           
           <?php 
 
-          $res=@mysql_query("set names utf8",$link);
-          $row=@mysql_fetch_array($res);
-          $res=mysql_query("select * from producto ORDER BY 1 limit 0,3",$link);
+          $res=@mysqli_query($link, "set names utf8");
+          $row=@mysqli_fetch_array($res);
+          $res=mysqli_query($link, "SELECT * FROM producto ORDER BY 1 LIMIT 0,3");
 
-          while ($rwc=mysql_fetch_array($res))
+          while ($rwc=mysqli_fetch_array($res))
             {
            ?>
 
-          <section id="bloque01">
+<!--           <section id="bloque01">
             <div id="nompro">
               <div id="subnompro"><?php echo $rwc[1]?></div>
               <div id="prec">S/. <?php echo $rwc[3]?></div>
@@ -32,17 +34,22 @@
             <article>
                 <img src="../../modulos/productos/<?php echo $rwc[4];?>" alt="">
             </article>
-          </section>
+          </section> -->
 
           <?php } ?>
 
+
+          <?php include ("ofertas.php"); ?>
           
-          <?php include ("nuevosprod.php"); ?>
+          <?php //include ("nuevosprod.php"); ?>
+        
         </section>
         
+
+
           <!-- <aside> esto es el aside </aside> -->
           <?php include ("footer.php"); ?>
-          <br><br>
+
           <?php include ("config_final.php"); ?>
 
     </body>

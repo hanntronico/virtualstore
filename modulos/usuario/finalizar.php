@@ -10,9 +10,15 @@ $tipago=$_POST["chktipago"];
 
 
 // $fec_ent=strftime("%Y-%m-%d", $_POST["fecha"]);
-// $fec_ent= $_POST["fecha"];
-list($dia, $mes, $anio) = split('[/.-]', $_POST["fecha"]);
+// echo $fec_ent= $_POST["fecha"]."<br>";
+
+
+list($dia, $mes, $anio) = explode("/", $_POST["fecha"]);
+
+// list($dia, $mes, $anio) = split('[/.-]', $_POST["fecha"]);
+
 $fec_ent=$anio."-".$mes."-".$dia;
+// exit();
 
 $grab = $_POST["grab_dir"];
 
@@ -80,18 +86,18 @@ function autogenerado($tabla,$campocodigo,$numcaracteres){
 Global $link;
 	//para extraer de la derecha se multiplica por -1
 	$numcaracteres=$numcaracteres*(-1);
-	$rsTabla=mysql_query("select count($campocodigo) from $tabla",$link);
-	$ATabla=mysql_fetch_array($rsTabla);
+	$rsTabla=mysqli_query($link, "select count($campocodigo) from $tabla");
+	$ATabla=mysqli_fetch_array($rsTabla);
 	$nreg=$ATabla[0];
 	if($nreg>0)	{
-		$rsTabla=mysql_query("select $campocodigo from $tabla",$link);
-		mysql_data_seek($rsTabla,$nreg-1);
-		$ATabla=mysql_fetch_array($rsTabla);
+		$rsTabla=mysqli_query($link, "select $campocodigo from $tabla");
+		mysqli_data_seek($rsTabla,$nreg-1);
+		$ATabla=mysqli_fetch_array($rsTabla);
 	}
 	$cod=$ATabla[0]+1;
 	$cod="00000000000000".$cod;
 	$generado=substr($cod,$numcaracteres);
-	mysql_free_result($rsTabla);
+	mysqli_free_result($rsTabla);
 	return $generado;
 }
 
@@ -106,10 +112,12 @@ if (count($k)>0)
 
 // cod_pedido	cod_usuario		fecpedido	tipo_pago	fec_entrega		hora_entrega	nom_entrega
 // direcc_entrega		comprob		rs_clie		ruc_clie	estado
-	$res=@mysql_query("set names utf8",$link);
-	$row=@mysql_fetch_array($res);
-	$rs=mysql_query("SELECT * FROM usuario WHERE cod_usuario='".$_SESSION["s_cod"]."'",$link);
-	$rf=mysql_fetch_array($rs);
+	$res=@mysqli_query($link, "set names utf8");
+	$row=@mysqli_fetch_array($res);
+	$sqlqry = "SELECT * FROM usuario WHERE cod_usuario=".$_SESSION["s_cod"];
+	// exit();
+	$rs=mysqli_query($link, $sqlqry);
+	$rf=mysqli_fetch_array($rs);
 
 
 	$fecha=strftime("%Y-%m-%d %H:%M:%S", time());
@@ -120,11 +128,11 @@ if (count($k)>0)
 		$ruc_ent = 0;
 	}
 
-	$res=@mysql_query("set names utf8",$link);
-	$row=@mysql_fetch_array($res);
+	$res=@mysqli_query($link, "set names utf8");
+	$row=@mysqli_fetch_array($res);
 
-	$sql1 = "insert into pedidos(cod_usuario, fecpedido, tipo_pago, fec_entrega, hora_entrega, nom_entrega, direcc_entrega, comprob, rs_clie, ruc_clie, estado) 
-		values ('".$_SESSION["s_cod"]."','"
+	$sql1 = "INSERT INTO pedidos(cod_usuario, fecpedido, tipo_pago, fec_entrega, hora_entrega, nom_entrega, direcc_entrega, comprob, rs_clie, ruc_clie, estado) 
+		VALUES ('".$_SESSION["s_cod"]."','"
 				  .$fecha."','"
 				  .$tipago."','"
 				  .$fec_ent."','"
@@ -133,6 +141,7 @@ if (count($k)>0)
 				  .$dir_ent."','"
 				  .$comp."','"
 				  .$rz_ent."', ".$ruc_ent.","."1)";
+	// exit();				  
 
 // insert into pedidos(cod_usuario, fecpedido, tipo_pago, fec_entrega, hora_entrega, nom_entrega, direcc_entrega, comprob, rs_clie, ruc_clie, estado) values ('12','2013-09-11','E','11/9/2013','08:00','Lourdes Sofía Torres Gonzales','','B','', 0,1)
 
@@ -141,20 +150,21 @@ if (count($k)>0)
 	// echo $tipago." ".$fec_ent." ".$hora_ent;
 	// exit();	
 
-	$res1=mysql_query($sql1,$link) or die ("Error insert pedido:$sql");
+	$res1=mysqli_query($link, $sql1) or die ("Error insert pedido:$sql");
 	// $row1=mysql_fetch_array($res1);
 // :insert into det_pedidos() values ('104', '44', '6.26', '1', '6.26', '',1)
-	$idpedido = mysql_insert_id();
+	$idpedido = mysqli_insert_id($link);
+	// exit();
 
 	foreach( $k as $key => $value ) 
 	{
-	$res=mysql_query("select * from producto where cod_producto=".$key."",$link);
-	$row=mysql_fetch_array($res);
+	$res=mysqli_query($link, "SELECT * FROM producto WHERE cod_producto=".$key);
+	$row=mysqli_fetch_array($res);
 	$total+=($row[3]*$value);
 		if ($value<>0)
 		{
-			$rs=mysql_query("SELECT * FROM pedidos WHERE cod_pedido='".$id."'",$link);
-			$numfilas=mysql_num_rows($rs);
+			$rs=mysqli_query($link, "SELECT * FROM pedidos WHERE cod_pedido=".$id);
+			$numfilas=mysqli_num_rows($rs);
 
 			// $fecha=strftime("%Y-%m-%d", time());  
 			// cod_pedido	cod_producto	precio 	cantidad	subtotal	dscto  
@@ -163,7 +173,7 @@ if (count($k)>0)
 			// if ($row['igv']==1) {
 			// }
 			
-			$sql="insert into det_pedidos() values ('".$idpedido."', '"
+			$sql="INSERT INTO det_pedidos() VALUES ('".$idpedido."', '"
 												  .$row[0]."', '"
 												  .$row[3]."', '"
 												  .$value."', '"
@@ -173,7 +183,7 @@ if (count($k)>0)
 				// echo $sql;
 				// echo "<br>";
 				// exit();
-				$rs=mysql_query($sql,$link) or die ("Error insert det_pedido:$sql");
+				$rs=mysqli_query($link, $sql) or die ("Error insert det_pedido:$sql");
 				
 				
 
@@ -205,7 +215,7 @@ if (count($k)>0)
 				      " WHERE cod_producto =".$idprod;	
 		// echo $sql2."<br>";
 		// exit();      
-		$rs3=mysql_query($sql2,$link) or die ("Error update producto:$sql2");
+		$rs3=mysqli_query($link, $sql2) or die ("Error update producto:$sql2");
 	}
 }
 
@@ -215,7 +225,7 @@ if ($grab=="S") {
 $sql4="UPDATE usuario SET direccion = '".$dir_ent."', telefono = '".$_POST["txttelf"]."'"." WHERE cod_usuario =".$_SESSION["s_cod"]." LIMIT 1";
 // echo $sql;
 // exit();
-$rs4=mysql_query($sql4,$link) or die ("Error :$sql");
+$rs4=mysqli_query($link, $sql4) or die ("Error :$sql");
 }
 
 /*********************************  ENVIO DE CORREO  **************************************/
@@ -238,7 +248,8 @@ require_once('../../mail/clases/class.phpmailer.php');
 
 $mail             = new PHPMailer(); 
 $body             = file_get_contents('../../mail/conten.php');
-$body             = eregi_replace("[\]",'',$body);
+// $body             = eregi_replace("[\]",'',$body);
+$body             = preg_replace("[\]",'',$body);
 
 
 $mail->AddReplyTo("no-reply@shop.grupochiappe.com","Mercado Virtual");

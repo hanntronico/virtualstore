@@ -2,11 +2,11 @@
 	session_start();
 	include("../conectar.php");
   $link=Conectarse();
-  $res=@mysql_query("set names utf8",$link);
-  $row=@mysql_fetch_array($res);
-  $sq="select * from usuario where cod_usuario=".$_SESSION["s_cod"];
-  $res=mysql_query($sq,$link);
-  $rowus=mysql_fetch_array($res);
+  $res=@mysqli_query($link, "set names utf8");
+  $row=@mysqli_fetch_array($res);
+  $sq="SELECT * FROM usuario WHERE cod_usuario=".$_SESSION["s_cod"];
+  $res=mysqli_query($link, $sq);
+  $rowus=mysqli_fetch_array($res);
   
 ?>
 

@@ -6,11 +6,11 @@
             <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
         <![endif]-->
 
-          <?php include ("paneles.php"); ?>
+          <?php //include ("paneles.php"); ?>
           <?php include ("header.php"); ?>
           <?php include ("nav.php"); ?>
 
-        <section id="contenedor">
+        <section class="container bg-light p-5" id="contenedor" style="border-radius: 0.75em;">
           <section id="land">
             <section id="msn_block">
               <p><b>Su Compra ha sido realizada con exito</b></p> <br>
@@ -23,7 +23,7 @@
         
           <!-- <aside> esto es el aside </aside> -->
           <?php include ("footer.php"); ?>
-          <br><br>
+          <!-- <br><br> -->
           <?php include ("config_final.php"); ?>
 
     </body>

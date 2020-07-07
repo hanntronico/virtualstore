@@ -260,3 +260,254 @@ ul {
     }
 
 }
+
+
+
+
+/* --------------------------------------------
+ *   Footer
+ *---------------------------------------------- */
+.footer {
+    background: #3a3a3a url("../img/img-testimonial-bg.png") repeat-x center bottom;
+}
+
+.footer-widget-section{
+    padding: 40px 0;
+}
+
+.footer .footer-logo {
+    margin-bottom: 30px;
+    }
+
+.footer .footer-text {
+    font-size: 18px;
+    color: #fff;
+    }
+
+.footer .footer-text ul{
+    border-top: 1px solid rgba(255,255,255,.05);
+    padding-top: 30px;
+    margin-top: 20px;
+    vertical-align: top;
+    display: table;
+    width: 100%;
+}
+
+.footer .footer-text ul i{
+    opacity: .5;
+
+}
+
+.footer .footer-text li{
+    display: table-cell;
+}
+
+.footer .footer-text ul .phone{
+    font-size: 24px;
+}
+
+.footer .footer-text ul i{
+    font-size: 30px;
+    margin-right: 10px;
+    position: relative;
+    top:1px;
+}
+
+.footer .footer-text .phone small{
+    display: block;
+    font-size: 12px;
+    padding-left: 40px;
+    opacity: .5;
+}
+
+.footer .footer-text  small i{
+    font-size: 12px;
+    margin-right: 5px;
+}
+
+.footer .footer-text .address{
+    padding-left: 30px;
+    font-size: 24px;
+}
+
+
+/* Copyright */
+
+.footer .copyright-section {
+    font-size: 12px;
+    background-color : #2d2d2d;
+    color            : #6b6b6b;
+    padding          : 20px 0;
+    }
+
+.footer .copyright-section .copytext {
+    text-transform : uppercase;
+    color          : #6b6b6b;
+    font-weight    : 600;
+    }
+
+.footer .copyright-section li a {
+    display   : block;
+    font-size : 13px;
+    color     : #6b6b6b;
+    }
+
+.footer .copyright-section li a:hover,
+.footer .copyright-section li.active a {
+    color : #ffffff;
+    }
+
+/* media queries */
+
+@media (min-width : 768px) {
+    .footer .copyright-section .list-inline > li {
+        padding-right : 10px;
+        padding-left  : 10px;
+        }
+    }
+
+
+@media (max-width : 768px) {
+    .footer .footer-text ul i,
+     .footer .footer-text ul .phone,
+     .footer .footer-text ul .address{
+        font-size: 14px;
+        padding: 0;
+    }
+
+    .footer .footer-text ul .phone small{
+        padding-left: 20px;
+    }
+
+
+    .footer .footer-text li{
+        display: block;
+        margin-bottom: 10px;
+    }
+
+
+    /*footer menu*/
+    .footer .copyright-section .pull-right{
+        float: none !important;
+    }
+}
+
+.btnrecalc{
+  visibility:hidden;
+}
+
+#botonera {
+  text-align: right;
+}
+
+#botonera a:link,
+#botonera a:visited,
+#botonera a:active {
+  color: #D70000;
+  text-decoration: none;
+}
+
+#botonera a:hover {
+  color: #F27900;
+  text-decoration: underline; 
+}
+
+.tbcar {
+  color: #004080;
+}
+
+.tbcar, .tbcar2 {
+  background: #FFFFFF;
+  border-collapse: collapse;
+  font-size: 12px; 
+  border: 1px solid #3164AC;
+  /*border: red 3px solid;*/
+  /*padding: 0px;*/
+}
+
+.tbcar thead tr, 
+.tbcar2 thead tr, 
+.tbcar thead tr:hover,
+.tbcar2 thead tr:hover {
+  background:#3164AC url("../../img/footer_tile.gif") repeat-x;
+  border: 1px solid #3164AC;
+  color: #FFFFFF;
+  font-size: 14px;
+}
+
+.tbcar tr, .tbcar2 tr {
+  background: #D9ECFF;
+  border-collapse: collapse; 
+  border-bottom: 1px solid #3164AC;
+}
+
+.tbcar2 td {
+  padding: 5px;
+}
+
+.tbcar2 tbody td {
+  font-size: 14px;
+}
+
+.tbcar td, .tbcar2 td {
+  /*border: 1px solid #408080;*/
+  border: none;
+}
+
+
+.tbcar tr:hover{
+  background: #D3D3D3;
+}
+
+#msnvacio {
+  font-size: 20px;
+  font-weight: bolder;
+  margin: 0px auto;
+  padding: 15px;
+  text-align: center;
+}
+
+#msnvacio a:link, #msnvacio a:visited {
+  color: #004080;
+  font-size: 20px;
+  font-weight: bolder;
+  margin: 0px auto;
+  padding: 15px;
+  text-decoration: underline;
+  text-align: center;
+
+}
+
+#bus_cont {
+  background: #FFD8B0;
+  border: 1px dashed #004080;
+  border-radius: 6px;
+  -webkit-border-radius: 6px; 
+  -moz-border-radius: 6px; 
+  color: #004080;
+  font-family: tahoma;
+  font-size: 10px;
+  font-style: normal; 
+  /*float: right;*/
+  display: none;
+  /*height: 150px;*/
+  position: absolute;
+  padding: 8px;
+  width: 200px;
+  z-index: 1000;
+  margin-top: -48px;
+  margin-left: -7px;
+
+}
+
+#bus_cont a:link, 
+#bus_cont a:visited,
+#bus_cont a:active {
+  color: #004080;
+  text-decoration: none;
+}
+
+#bus_cont a:hover {
+  text-decoration: underline;
+
+}

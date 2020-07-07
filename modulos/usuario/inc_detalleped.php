@@ -3,18 +3,18 @@
   session_start();
   include("../conectar.php");
   $link=Conectarse();
-  $res=@mysql_query("set names utf8",$link);
-  $row=@mysql_fetch_array($res);
-  $sq="select producto.*, det_pedidos.cantidad, det_pedidos.subtotal 
-  	   from det_pedidos, producto 
-       where det_pedidos.cod_producto = producto.cod_producto 
-       and cod_pedido=".$_GET["cod"]." order by 1";
+  $res=@mysqli_query($link, "set names utf8");
+  $row=@mysqli_fetch_array($res);
+  $sq="SELECT producto.*, det_pedidos.cantidad, det_pedidos.subtotal 
+  	   FROM det_pedidos, producto 
+       WHERE det_pedidos.cod_producto = producto.cod_producto 
+       AND cod_pedido=".$_GET["cod"]." order by 1";
 // select producto.*, det_pedidos.cantidad, det_pedidos.subtotal  
 // from det_pedidos, producto 
 // where det_pedidos.cod_producto = producto.cod_producto 
 // and cod_pedido=50 order by 1
 
-  $res=mysql_query($sq,$link);;	
+  $res=mysqli_query($link,$sq);;	
 ?>
 <div id="sty_detalle">
 <table border="0" cellspacing="0" cellpadding="0" width="100%" class="tb_det"> 
@@ -30,7 +30,7 @@
 		</tr>
 	</thead>
 	<tbody>
-	<?php while ($rowp=mysql_fetch_array($res)) { ?>
+	<?php while ($rowp=mysqli_fetch_array($res)) { ?>
 		<!-- cod_producto	descripcion	cod_subcat	precio	imagen	stock	cod_marca	prom -->
 		<tr class="tr_detalle2">
 			<td>&nbsp;</td>

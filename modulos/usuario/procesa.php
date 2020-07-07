@@ -24,7 +24,9 @@ if ($tipo=="Recalcular")
 		$_SESSION["s_prod"][$pr[$i]]=$k[$i];
 	}
 	// header("location: ".$origen."?sw=1");
-	header("location: principal.php?sw=1");
+	
+	// header("location: principal.php?sw=1");
+	header("location: compra.php");
 }
 else
 {

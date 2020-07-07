@@ -1,5 +1,16 @@
       <!-- // <script type="text/javascript" src="../../js/bootstrap.min.js"></script>-->
       <!--   Bootstrap Framework -->
+
+      
+    <script src="https://bootswatch.com/_vendor/jquery/dist/jquery.min.js"></script>
+    <!-- <script src="https://bootswatch.com/_vendor/popper.js/dist/umd/popper.min.js"></script> -->
+    <script src="https://bootswatch.com/_vendor/bootstrap/dist/js/bootstrap.min.js"></script>
+    <!-- <script src="https://bootswatch.com/_assets/js/custom.js"></script> -->
+    <script type="text/javascript" src="js/scripts.js"></script>
+
+
+      <script type="text/javascript" src="https://www.eyecon.ro/bootstrap-datepicker/js/bootstrap-datepicker.js"></script>     
+ 
       
       <script type="text/javascript" src="../../js/plugins.js"></script><!-- jQuery Plugins -->
       <script type="text/javascript" src="../../addons/superfish_responsive/superfish_menu.js"></script>
