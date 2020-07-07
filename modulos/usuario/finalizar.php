@@ -252,12 +252,12 @@ $body             = file_get_contents('../../mail/conten.php');
 $body             = preg_replace("[\]",'',$body);
 
 
-$mail->AddReplyTo("no-reply@shop.grupochiappe.com","Mercado Virtual");
-$mail->SetFrom('no-reply@shop.grupochiappe.com', 'Mercado Virtual');
-$mail->AddReplyTo("no-reply@shop.grupochiappe.com","Mercado Virtual");
-$address = "no-reply@shop.grupochiappe.com";
+$mail->AddReplyTo("no-reply@mercadosdelnorte.com","Mercado Virtual");
+$mail->SetFrom('no-reply@mercadosdelnorte.com', 'Mercado Virtual');
+$mail->AddReplyTo("no-reply@mercadosdelnorte.com","Mercado Virtual");
+$address = "no-reply@mercadosdelnorte.com";
 $mail->AddAddress($address, 'Webmaster');
-$mail->Subject    = "Mercado Virtual Mensaje desde la Web";
+$mail->Subject    = "Mercados del mercado - Mensaje desde la Web";
 $mail->AltBody    = "Para poder ver el mensaje, por favor use un visor de correos compatible con HTML!";
 $mail->Body=$mensaje;
 $mail->Send();
@@ -268,9 +268,9 @@ $mail->ClearReplyTos();
 
 
 
-$mail->AddReplyTo("no-reply@shop.grupochiappe.com","Mercado Virtual");
-$mail->SetFrom('no-reply@shop.grupochiappe.com', 'Mercado Virtual');
-$mail->AddReplyTo("no-reply@shop.grupochiappe.com","Mercado Virtual");
+$mail->AddReplyTo("no-reply@mercadosdelnorte.com","Mercado Virtual");
+$mail->SetFrom('no-reply@mercadosdelnorte.com', 'Mercado Virtual');
+$mail->AddReplyTo("no-reply@mercadosdelnorte.com","Mercado Virtual");
 $address = $omail;
 $mail->AddAddress($address, $onombre);
 $mail->Subject = "Ud. se ha comunicado con Mercado Virtual";

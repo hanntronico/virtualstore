@@ -1,46 +1,59 @@
-        <footer>
-          <section id="wrapper">
-              
-            <div id="col_1" style="background: #FFFFFF">
-               <!-- <img src="img/mod_face.jpg" alt="mod_face.jpg"> -->
-               <iframe src="//www.facebook.com/plugins/likebox.php?href=https%3A%2F%2Fwww.facebook.com%2Fpages%2FEl-Mercadito-Virtual%2F631114736925574&amp;width=385&amp;height=210&amp;colorscheme=light&amp;show_faces=true&amp;header=true&amp;stream=false&amp;show_border=true" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:385px; height:210px;" allowTransparency="true"></iframe>
-            </div>
+<?php 
 
-            <div id="col_2">
-               <span style="font-size:12px;">Dirección: <br>
-               Manuel Suarez 238 Chiclayo
-               </span>
-            </div>
+	//echo "buscate un motor";
 
-            <div id="col_3">
-               Email
-               <div id="correos">
-                <ul>
-                    <li>ventas@mercadovirtual.com</li>
-                    <li>servicio@mercadovirtual.com</li>
-                </ul>
-               </div><br>
-               Teléfonos
-               <div id="telefonos">
-                <ul>
-                    <li>Whasapp: 981 023 781</li>
-                    <li>RPC: 987596250</li>
-                </ul>
-               </div>
-            </div>
+?>
 
-            <div id="col_4">
-               Síguenos 
-              <div class="sociales">
-                <a href="https://www.facebook.com/pages/El-Mercadito-Virtual/631114736925574" target="_blank"><img src="img/i1.gif" alt=""/></a>
-                <a href="#"><img src="img/i2.gif" alt=""/></a>
-                <a href="#"><img src="img/i3.gif" alt=""/></a>
-              </div>
-            </div>
+<footer class="footer">
 
-            <div id="datos">
-              &copy; <script type="text/javascript">var mdate = new Date(); document.write(mdate.getFullYear());</script>  Diseñado por MACBERRI SAC, Todos los derechos reservados
-            </div>
 
-          </section>  
-        </footer>
+    <div class="footer-widget-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+<!--                <div class="footer-logo">
+                        <a href="#"><img class="img-responsive" src="img/logo_blanco.png" alt=""></a>
+                    </div> -->
+<!-- <iframe src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Fmacberri%2F&tabs=timeline&width=340&height=300&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=true&appId=2815790478646596" width="340" height="300" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true" allow="encrypted-media"></iframe> -->
+
+
+                </div><!-- /.col-sm-4 -->
+                <div class="col-md-8">
+                    <div class="footer-text">
+                      <p>Los mejores productos del mercado, para el nuestro hogar lo mejor, con los cuidados y los protocolos correctos de entrega establecidos por el estado 
+                      </p>
+                      <ul>
+                          <li class="phone">
+                          	<i class="fa fa-volume-control-phone" aria-hidden="true"></i> 926 564 458 <br>
+                          	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 985 868 595 <br>
+                          	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</i> 999 888 777
+                          
+                          <small><i class="fa fa-clock-o" aria-hidden="true"></i> 
+                            Lunes a viernes 7:30 am - 3:30 pm</small>
+                          </li>
+                          <li class="address">
+                          <address style="font-size: 14px; ">
+                            <i class="fa fa-map-pin" aria-hidden="true"></i>
+                            Jr. Unión N° 330, Distrito de Ambo - Provincia de Ambo
+                          </address>
+                          </li>
+                      </ul>
+                    </div>
+                </div><!-- /.col-sm-4 -->
+            </div>
+        </div>
+    </div>
+
+    <div class="copyright-section">
+        <div class="container clearfix">
+             <span class="copytext">Copyright &copy; 2020 | Mercados del Norte <strong style="color:#fe1c1e">ENTREGAS A DOMICILIO</strong></span>
+
+            <ul class="list-inline pull-right">
+                <li class="active"> <a href="https://www.macberri.com/" target="_blank"> Web Diseño: MACBERRI SAC</a></li>
+            </ul>
+        </div><!-- .container -->
+
+    </div><!-- .copyright-section -->
+
+
+</footer>

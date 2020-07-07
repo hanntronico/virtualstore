@@ -1,24 +1,15 @@
-      <!-- // <script type="text/javascript" src="../../js/bootstrap.min.js"></script>-->
-      <!--   Bootstrap Framework -->
-
-      
-    <script src="https://bootswatch.com/_vendor/jquery/dist/jquery.min.js"></script>
-    <!-- <script src="https://bootswatch.com/_vendor/popper.js/dist/umd/popper.min.js"></script> -->
-    <script src="https://bootswatch.com/_vendor/bootstrap/dist/js/bootstrap.min.js"></script>
-    <!-- <script src="https://bootswatch.com/_assets/js/custom.js"></script> -->
-    <script type="text/javascript" src="js/scripts.js"></script>
+<!--     <script src="https://bootswatch.com/_vendor/jquery/dist/jquery.min.js"></script>
+    <script src="https://bootswatch.com/_vendor/bootstrap/dist/js/bootstrap.min.js"></script> -->
 
 
-      <script type="text/javascript" src="https://www.eyecon.ro/bootstrap-datepicker/js/bootstrap-datepicker.js"></script>     
- 
-      
-      <script type="text/javascript" src="../../js/plugins.js"></script><!-- jQuery Plugins -->
-      <script type="text/javascript" src="../../addons/superfish_responsive/superfish_menu.js"></script>
+      <script type="text/javascript" src="js/bootstrap.min.js"></script><!-- Bootstrap Framework -->
+      <script type="text/javascript" src="js/plugins.js"></script><!-- jQuery Plugins -->
+      <script type="text/javascript" src="addons/superfish_responsive/superfish_menu.js"></script>
       <!-- Superfish Menu -->
-      <!-- <script type="text/javascript" src="../../js/kalypso_script.js"></script> --><!-- custom scripts file -->
+      <script type="text/javascript" src="js/kalypso_script.js"></script><!-- custom scripts file -->
       <!-- prettyphoto scripts & styles -->
-      <link rel="stylesheet" href="../../addons/prettyphoto/prettyPhoto.css" type="text/css" />
-      <script type="text/javascript" src="../../addons/prettyphoto/jquery.prettyPhoto.js"></script>
+      <link rel="stylesheet" href="addons/prettyphoto/prettyPhoto.css" type="text/css" />
+      <script type="text/javascript" src="addons/prettyphoto/jquery.prettyPhoto.js"></script>
       <script type="text/javascript">
         function ppOpen(panel, width){
           jQuery.prettyPhoto.close();
@@ -38,14 +29,11 @@
             jQuery.fn.prettyPhoto({social_tools: false, deeplinking: false, show_title: false, default_width: 980, theme:'pp_kalypso transparent', opacity: 0.95});
             jQuery.prettyPhoto.open($(this).attr('href'),'','');
           });
-
-          jQuery("#calendario").hide();
-
-         });
+        });
 
       </script>
 
-    
+
 
         <!--<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
         <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.9.1.min.js"><\/script>')</script>

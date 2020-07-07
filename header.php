@@ -1,33 +1,45 @@
+	<div class="header-top visible-md visible-lg">
+		<div class="container">
+			<div class="row">
+        <div class="col-sm-12 col-md-4">
+				  	<ul class="social-icon">
+                <li><a href="https://www.facebook.com/SCJAMBO/" target="_blank" class="fa fa-facebook" aria-hidden="true"> </a></li>
+                <li><a href="https://twitter.com/SAGRADO09759140" target="_blank" class="fa fa-twitter" aria-hidden="true"> </a></li>
+                <li><a href="https://www.youtube.com/channel/UCmXa75_QU7PXRFVPNy38LHQ" target="_blank" class="fa fa-youtube" aria-hidden="true"> </a></li>
+            </ul>
+				</div>
 
-        <header id="header">
-          <div id="logo">
-             <img src="img/logo2.png" alt="logo">
-          </div>
 
-          <div id="loginB">
-              <div id="menu">
-                Tu mercado, desde casa...<br>
+            <div class="col-sm-12 col-md-8">
+                <ul class="top-contact pull-right">
+                    <li class="phone"><i class="fa fa-phone-square" aria-hidden="true"></i> 926 564 458</li>
+                    <li class="email"><i class="fa fa-envelope" aria-hidden="true"></i>ventas@mercadosdelnorte.com</li>
 
-<!--            <ul>
-                  <li>&nbsp;</li>
-                  <li>&nbsp;</li>
-                  <li>&nbsp;</li>
-                  <li><a href="#login_panel" data-rel="prettyPhoto[login_panel]">Login</a></li>
-                </ul> -->
-              </div>
-              
-              <div id="regis">
-                <!-- <a href="#login_panel" data-rel="prettyPhoto[login_panel]">REGISTRESE AQUÍ</a>  -->
+<!-- <div id="solo_nom">
+	<a href="#"><span class="f_compra">Bienvenido(a):&nbsp;
+                <?php echo $solonom; ?></span></a></div> -->
 
-                  <a href="#register_panel" data-rel="prettyPhoto[register_panel]" id="reg">
-                   <div id="enl_reg">Regístrese</div></a>
-              
-                  <a href="#login_panel" data-rel="prettyPhoto[login_panel]">
-                  <div id="enl_log">Ingrese</div></a>
+                    
+                    <?php if (isset($_SESSION["s_cod"])){ ?>
+                      <li class="phone">
+                      	<i class="fa fa-user" aria-hidden="true"></i> Bienvenido(a):&nbsp;<?php echo $solonom; ?></li>
+                    <?php }else{ ?>
 
-                <a href="#forgot_panel" data-rel="prettyPhoto[forgot_panel]" id="forgot"></a>
-                <a href="#caja_msn" data-rel="prettyPhoto[caja_msn]" id="msn"></a>
-                <!-- <a href="#" class="create_account" onClick="ppOpen('#register_panel', '280');">REGISTRESE</a> -->
-              </div>
-          </div>
-        </header><!-- /header -->
+<!--                       <li class="get-a-quote"><a href="ingresar/" title="" style="background-color: #FC6D72;">Inicia Sesión</a></li> -->
+<!--                       <li class="get-a-quote"><a href="ingresar/" style="background-color: #D9534F; font-weight: bold;" target="_blank">Inicia Sesión</a></li> -->
+
+                       <li>
+                        <a href="#" class="btn btn-info btn-md" data-toggle="modal" data-target="#registrarse"><i class="fa fa-laptop" aria-hidden="true"></i> Registrese</a></li>
+
+                       <li><a href="#" class="btn btn-info btn-md" data-toggle="modal" data-target="#exampleModalLong"><i class="fa fa-laptop" aria-hidden="true"></i> Ingrese</a></li>                       
+                    <?php } ?>
+                
+                </ul>
+            </div>
+
+
+
+			</div>
+		</div>
+
+	</div>

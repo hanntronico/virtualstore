@@ -82,10 +82,10 @@ $obj-> CerrarConexion();
 									// echo $sql."<br>".$secpass;
 									// exit(); 			  	
 
-									$obj-> abrirConexion();
-									$obj-> setcharset();
-									$rs = $obj->Query($sql);
-									$obj-> CerrarConexion();
+									// $obj-> abrirConexion();
+									// $obj-> setcharset();
+									// $rs = $obj->Query($sql);
+									// $obj-> CerrarConexion();
 
 
 									// include 'mailregistro.php';
@@ -106,7 +106,7 @@ $mensaje="Mensaje desde la web<br>Nombre: "
 		.$onombre. "<br>Email: "
 		.$omail;
 
-$mensaje2="<hr>Estimado(a) ".$onombre.","."<br><br>"."Queremos darte la bienvenida a MERCADO VIRTUAL!"."<br>".
+$mensaje2="<hr>Estimado(a) ".$onombre.","."<br><br>"."Queremos darte la bienvenida a MERCADOS DEL NORTE!"."<br>".
 		  "Tu usuario es : <b>".$omail."</b><br>".
 		  "Tu password es : ".$opass."</b><br><br>".
 		  "Entra ya a <a href='http://shop.grupochiappe.com'>http://shop.grupochiappe.com/</a> y haz tu compras desde tu casa, con delivery directo a tu domicilio 
@@ -120,18 +120,25 @@ require_once('mail/clases/class.phpmailer.php');
 $mail             = new PHPMailer();
 
 $body             = file_get_contents('mail/conten.php');
-$body             = eregi_replace("[\]",'',$body);
+// $body             = eregi_replace("[\]",'',$body);
+// var_dump($body);
+
+$body             = preg_replace("[\\\]",'',$body);
+// exit();
 
 
-$mail->AddReplyTo("no-reply@shop.grupochiappe.com","Mercado Virtual");
-$mail->SetFrom('no-reply@shop.grupochiappe.com', 'Mercado Virtual');
-$mail->AddReplyTo("no-reply@shop.grupochiappe.com","Mercado Virtual");
-$address = "no-reply@shop.grupochiappe.com";
+
+
+$mail->AddReplyTo("no-reply@mercadosdelnorte.com","Mercados del mercado");
+$mail->SetFrom('no-reply@mercadosdelnorte.com', 'Mercados del mercado');
+$mail->AddReplyTo("no-reply@mercadosdelnorte.com","Mercados del mercado");
+$address = "no-reply@mercadosdelnorte.com";
 $mail->AddAddress($address, 'Webmaster');
-$mail->Subject    = "Mercado Virtual Mensaje desde la Web";
+$mail->Subject    = "Mercados del norte - Mensaje desde la Web";
 $mail->AltBody    = "Para poder ver el mensaje, por favor use un visor de correos compatible con HTML!";
 $mail->Body=$mensaje;
 $mail->Send();
+
 
 $mail->ClearAttachments();
 $mail->ClearAddresses();
@@ -139,9 +146,9 @@ $mail->ClearReplyTos();
 
 
 
-$mail->AddReplyTo("no-reply@shop.grupochiappe.com","Mercado Virtual");
-$mail->SetFrom('no-reply@shop.grupochiappe.com', 'Mercado Virtual');
-$mail->AddReplyTo("no-reply@shop.grupochiappe.com","Mercado Virtual");
+$mail->AddReplyTo("no-reply@mercadosdelnorte.com","Mercados del mercado");
+$mail->SetFrom('no-reply@mercadosdelnorte.com', 'Mercados del mercado');
+$mail->AddReplyTo("no-reply@mercadosdelnorte.com","Mercados del mercado");
 $address = $omail;
 $mail->AddAddress($address, $onombre);
 $mail->Subject = "Confirmacion de registro";

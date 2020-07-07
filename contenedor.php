@@ -8,29 +8,49 @@ $sql = "SELECT * FROM producto WHERE estado=2 AND stock <> 0 ORDER BY 1 LIMIT 0,
 $res=@mysqli_query($link, $sql);
     // $row=mysqli_fetch_array($res);
 ?>
-          <section id="land">
-            
-            <?php include 'slider/slider_gp.php'; ?>
 
-          </section>
-          
-          <?php 
-          while ($rwc=@mysqli_fetch_array($res))
-            {
-              //echo $rwc[0]." ";
-           // cod_producto descripcion cod_tipo  precio  imagen  stock cod_marca prom
-           ?>
+          <section id="land" class="py-5">
 
-          <section id="bloque01">
-            <div id="nompro">
-              <div id="subnompro"><?php echo $rwc[1]?></div>
-              <div id="prec">S/. <?php echo $rwc[3]?></div>
-              <a href="#caja_msn2" data-rel="prettyPhoto[caja_msn2]"> 
-                <div id="nubecompra">COMPRAR <br>AHORA</div></a>
+
+            <div class="jumbotron">
+              <h1 class="display-3">Hello, world!</h1>
+              <p class="lead">This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured content or information.</p>
+              <hr class="my-4">
+              <p>It uses utility classes for typography and spacing to space content out within the larger container.</p>
+              <p class="lead">
+                <a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a>
+              </p>
             </div>
-            <article>
-                <img src="modulos/productos/<?php echo $rwc[4];?>" alt="">
-            </article>
+
+            <?php //include 'slider/slider_gp.php'; ?>
+
+
+
+
           </section>
 
-          <?php  } ?>
+
+
+<!-- <div class="modal">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Modal title</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <p>Modal body text goes here.</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary">Save changes</button>
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div> -->
+
+
+
+<?php include 'ofertas.php'; ?>

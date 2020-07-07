@@ -1724,16 +1724,39 @@ class PHPMailer {
 
     switch (strtolower($position)) {
       case 'phrase':
-        $encoded = preg_replace("/([^A-Za-z0-9!*+\/ -])/e", "'='.sprintf('%02X', ord('\\1'))", $encoded);
+        // $encoded = preg_replace("/([^A-Za-z0-9!*+\/ -])/e", "'='.sprintf('%02X', ord('\\1'))", $encoded);
+
+        $regex="/([^A-Za-z0-9!*+\/ -])/";
+        $stuff="'='.sprintf('%02X', ord('\\1'))";
+        $encoded = preg_replace_callback($regex, function ($match) {
+           return $stuff;
+        }, $encoded);
+
         break;
       case 'comment':
-        $encoded = preg_replace("/([\(\)\"])/e", "'='.sprintf('%02X', ord('\\1'))", $encoded);
+        // $encoded = preg_replace("/([\(\)\"])/e", "'='.sprintf('%02X', ord('\\1'))", $encoded);
+      
+        $regex="/([\(\)\"])/";
+        $stuff="'='.sprintf('%02X', ord('\\1'))";
+        $encoded= preg_replace_callback($regex, function ($match) {
+           return $stuff;
+        }, $encoded);
+
+
       case 'text':
       default:
         // Replace every high ascii, control =, ? and _ characters
         //TODO using /e (equivalent to eval()) is probably not a good idea
-        $encoded = preg_replace('/([\000-\011\013\014\016-\037\075\077\137\177-\377])/e',
-              "'='.sprintf('%02X', ord('\\1'))", $encoded);
+        // $encoded = preg_replace('/([\000-\011\013\014\016-\037\075\077\137\177-\377])/e',
+              // "'='.sprintf('%02X', ord('\\1'))", $encoded);
+
+        $regex="/([\000-\011\013\014\016-\037\075\077\137\177-\377])/";
+        $stuff="'='.sprintf('%02X', ord('\\1'))";
+        
+        $encoded =preg_replace_callback($regex, function ($match) {
+           return $stuff;
+        }, $encoded);
+
         break;
     }
 
