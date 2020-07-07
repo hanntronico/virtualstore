@@ -19,9 +19,9 @@ class clsConexion {
 
 	public function __construct() {
 		$this->strServidor 	= "localhost";
-		$this->strUsuario 	= "shopgrup_usu078";
-		$this->strClave 	= "*gp@123*";
-		$this->strBD 		= "shopgrup_tienda";
+		$this->strUsuario 	= "mercados_user2020";
+		$this->strClave 	= "*m3rc@d05*";
+		$this->strBD 		= "mercados_virtualstore";
 		$this->type			= "MYSQLI";
 	 	}
 
