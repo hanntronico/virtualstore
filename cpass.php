@@ -2,7 +2,7 @@
 session_start();
 include("modulos/conectar.php");
 $link=Conectarse();
-$res=@mysqi_query($link, "set names utf8");
+$res=@mysqli_query($link, "set names utf8");
 $row=@mysqli_fetch_array($res);
 $sq="select * from usuario where cod_usuario=".$_SESSION["s_cod"];
 $res=@mysqli_query($link, $sq);

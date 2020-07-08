@@ -82,10 +82,10 @@ $obj-> CerrarConexion();
 									// echo $sql."<br>".$secpass;
 									// exit(); 			  	
 
-									// $obj-> abrirConexion();
-									// $obj-> setcharset();
-									// $rs = $obj->Query($sql);
-									// $obj-> CerrarConexion();
+									$obj-> abrirConexion();
+									$obj-> setcharset();
+									$rs = $obj->Query($sql);
+									$obj-> CerrarConexion();
 
 
 									// include 'mailregistro.php';
@@ -109,7 +109,7 @@ $mensaje="Mensaje desde la web<br>Nombre: "
 $mensaje2="<hr>Estimado(a) ".$onombre.","."<br><br>"."Queremos darte la bienvenida a MERCADOS DEL NORTE!"."<br>".
 		  "Tu usuario es : <b>".$omail."</b><br>".
 		  "Tu password es : ".$opass."</b><br><br>".
-		  "Entra ya a <a href='http://shop.grupochiappe.com'>http://shop.grupochiappe.com/</a> y haz tu compras desde tu casa, con delivery directo a tu domicilio 
+		  "Entra ya a <a href='http://mercadosdelnorte.com/'>http://mercadosdelnorte.com/</a> y haz tu compras desde tu casa, con delivery directo a tu domicilio 
 		  <hr>";
 
 
