@@ -22,7 +22,7 @@
           <?php include ("subnav.php"); ?>
 
 
-      <section class="container bg-light" id="contenedor" style="border-radius: 0.75em;" >
+      <section class="container" id="contenedor" style="border-radius: 0.75em;" >
 
 				<?php include ("contenedor.php"); ?>
           

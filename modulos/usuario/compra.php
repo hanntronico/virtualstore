@@ -10,7 +10,7 @@
           <?php include ("nav.php"); ?>
           <?php include ("subnav.php"); ?>
 
-        <section class="container bg-light" id="contenedor" style="border-radius: 0.75em;">
+        <section class="container" id="contenedor" style="border-radius: 0.75em;">
         <!-- <section id="contenedor" style="border: 1px solid #ff0000;" > -->
           <section id="land"></section>
           

@@ -38,7 +38,7 @@ $link=Conectarse();
           <?php include ("header.php"); ?>
           <?php include ("nav.php"); ?>
 
-        <section class="container bg-light" id="contenedor" style="border-radius: 0.75em;" >
+        <section class="container" id="contenedor" style="border-radius: 0.75em;" >
           <?php include ("contenedor.php"); ?>
           <?php //include ("nuevosprod.php"); ?>
         </section>
